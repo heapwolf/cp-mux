@@ -13,7 +13,6 @@ An example using the `net` module.
 
 ```js
 var net = require('net')
-var fs = require('fs')
 var copy = require('./index')
 
 function onDone() {

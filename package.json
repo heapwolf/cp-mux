@@ -1,0 +1,19 @@
+{
+  "name": "netcopy",
+  "version": "1.0.0",
+  "description": "copy files over a multiplexed stream",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node test.js"
+  },
+  "author": "hij1nx",
+  "license": "ISC",
+  "dependencies": {
+    "multiplex": "^4.0.1",
+    "split2": "^0.2.1",
+    "through2": "^0.6.3"
+  },
+  "devDependencies": {
+    "buffer-equal": "0.0.1"
+  }
+}

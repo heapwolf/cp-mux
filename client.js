@@ -22,7 +22,6 @@ module.exports = function(dir, cb) {
           headers = chunk
           count = headers.length
           headers.unshift(null)
-          console.log(headers)
         }))
     }
 

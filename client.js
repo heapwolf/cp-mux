@@ -35,10 +35,11 @@ module.exports = function(dir, cb) {
 
     stream.pipe(s)
     stream.on('end', function() {
-      if (!--count && cb) cb()
+      if (!--count) mux.emit('end')
     })
   }
 
-  return multiplex(onStream)
+  var mux = multiplex(onStream)
+  return mux
 }
 

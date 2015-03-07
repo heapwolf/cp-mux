@@ -1,10 +1,10 @@
 {
-  "name": "netcopy",
+  "name": "cp-mux",
   "version": "1.0.0",
   "description": "copy files over a multiplexed stream",
   "main": "index.js",
   "scripts": {
-    "test": "./node test.js"
+    "test": "sh ./test/make-data.sh && node ./test/test.js"
   },
   "author": "hij1nx",
   "license": "ISC",

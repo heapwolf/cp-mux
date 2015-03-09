@@ -4,7 +4,7 @@
   "description": "copy files over a multiplexed stream",
   "main": "index.js",
   "scripts": {
-    "test": "sh ./test/make-data.sh && node ./test/test.js"
+    "test": "./test/make-data.sh && node ./test/test.js"
   },
   "author": "hij1nx",
   "license": "ISC",

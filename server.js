@@ -1,6 +1,7 @@
 var path = require('path')
 var multiplex = require('multiplex')
 var fs = require('fs')
+var async = require('async')
 
 var mux = multiplex()
 
@@ -20,11 +21,10 @@ module.exports = function(dir) {
     var data = JSON.stringify(files) + '\n'
 
     function afterHeaders() {
-      files.forEach(function(file) {
-        fs.createReadStream(file)
-          .pipe(mux.createStream())
+      async.eachLimit(files, 10, function(file, cb) {
+        fs.createReadStream(file).on('end', cb).pipe(mux.createStream(file))
       })
-    } 
+    }
 
     headers.write(data, afterHeaders)
   }

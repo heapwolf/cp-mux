@@ -25,12 +25,11 @@ module.exports = function(dir, cb) {
         }))
     }
 
-    var name = headers[id]
-    var s = streams[name]
+    var s = streams[id]
 
     if (!s) {
-      var f = path.join(dir, path.basename(name))
-      s = streams[name] = fs.createWriteStream(f)
+      var f = path.join(dir, path.basename(id))
+      s = streams[id] = fs.createWriteStream(f)
     }
 
     stream.pipe(s)

@@ -1,5 +1,5 @@
 {
-  "name": "cp-mux",
+  "name": "@viaforensics/cp-mux",
   "version": "1.0.0",
   "description": "copy files over a multiplexed stream",
   "main": "index.js",

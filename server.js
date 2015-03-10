@@ -3,8 +3,6 @@ var multiplex = require('multiplex')
 var fs = require('fs')
 var async = require('async')
 
-var mux = multiplex()
-
 module.exports = function(dir) {
 
   dir = path.resolve(dir)
@@ -14,6 +12,8 @@ module.exports = function(dir) {
   })
 
   return function(socket) {
+    var mux = multiplex()
+
     socket.on('error', function() {})
     mux.pipe(socket)
 

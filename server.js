@@ -3,9 +3,13 @@ var multiplex = require('multiplex')
 var fs = require('fs')
 var async = require('async')
 
-module.exports = function(dir) {
+module.exports = function(opts) {
+  if (typeof opts == 'string') {
+    opts = { dir: opts }
+  }
 
-  dir = path.resolve(dir)
+  var dir = path.resolve(opts.dir)
+  var concurrency = opts.concurrency || 10
 
   var files = fs.readdirSync(dir).map(function(file) {
     return path.join(dir, file)
@@ -21,7 +25,7 @@ module.exports = function(dir) {
     var data = JSON.stringify(files) + '\n'
 
     function afterHeaders() {
-      async.eachLimit(files, 10, function(file, cb) {
+      async.eachLimit(files, concurrency, function(file, cb) {
         fs.createReadStream(file).on('end', cb).pipe(mux.createStream(file))
       })
     }

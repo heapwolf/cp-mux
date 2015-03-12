@@ -27,6 +27,10 @@ net
 
 # OPTIONS
 
+### concurrency
+
+Determines how many files that should be transferred concurrently. Default is `10`.
+
 ### force
 Specifies removal of the target file if it cannot be opened for write operations. The removal precedes any copying performed by the cp command.
 

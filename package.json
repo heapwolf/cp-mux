@@ -1,6 +1,6 @@
 {
-  "name": "cp-mux",
-  "version": "1.0.0",
+  "name": "@viaforensics/cp-mux",
+  "version": "1.1.1",
   "description": "copy files over a multiplexed stream",
   "main": "index.js",
   "scripts": {
@@ -16,5 +16,9 @@
   },
   "devDependencies": {
     "buffer-equal": "0.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/viaforensics/cp-mux"
   }
 }

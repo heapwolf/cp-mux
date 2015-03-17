@@ -1,5 +1,5 @@
 # SYOPSIS
-copy files over a multiplexed stream
+a proof of concept to copy files over a multiplexed stream. not feature complete.
 
 # EXAMPLE
 An example using the `net` module.

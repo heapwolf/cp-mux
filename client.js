@@ -39,6 +39,7 @@ module.exports = function(dir, cb) {
   }
 
   var mux = multiplex(onStream)
+  mux.on('error', function() {})
   return mux
 }
 

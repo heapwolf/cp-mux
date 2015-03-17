@@ -17,7 +17,8 @@ module.exports = function(opts) {
 
   return function(socket) {
     var mux = multiplex()
-
+    
+    mux.on('error', function() {})
     socket.on('error', function() {})
     mux.pipe(socket)
 
